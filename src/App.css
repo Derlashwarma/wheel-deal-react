@@ -1,16 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 *{
   font-family: "Roboto", sans-serif;
+}
+html{
+  height: 100vh;
+}
+.page-title{
+  font-size: 50px;
   font-weight: 900;
+  font-family: "Poppins", sans-serif;
+}
+.web-title {
+  font-size: 70px;
+  font-weight: 900;
+  background: linear-gradient(to right, red, blue);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .welcome{
   font-weight: 900;
   width: fit-content;
 }
-.container{
+.container-vertical{
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   flex-direction: column;
+  justify-content: center;
+  height: 85vh;
+}
+.container-horizontal{
+  display: flex;
+  /* border: 1px solid blue; */
+  flex-direction: row;
+  width: 100%;
+}
+.text-justify{
+  text-align: justify;
+}
+.half{
+  width: 50%;
+  /* border: 1px solid yellowgreen; */
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .list {
   list-style: none;
@@ -28,4 +61,61 @@
 }
 .list-item:hover{
   transform: scale(1.2);
+}
+#changing_images{
+  width: 100%;
+}
+@media (max-width: 1000px){
+  .half{
+    width: 100%;
+  }
+  .container-horizontal{
+    flex-direction: column;
+  }
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.7;
+  animation: move 10s linear infinite;
+}
+
+.shape.circle {
+  border-radius: 50%;
+  
+  background-color: #2423231c;
+}
+
+.shape.square {
+  background-color: #c17c7c1c;
+}
+
+@keyframes move-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100vw); }
+}
+
+@keyframes move-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100vw); }
+}
+
+@keyframes move-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
+}
+
+@keyframes move-down {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+.container-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; 
 }
