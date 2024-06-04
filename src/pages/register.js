@@ -13,9 +13,9 @@ function Register() {
         const querySnapshot = await getDocs(q);
         if (!querySnapshot.empty) {
             alert("An account with this username already exists.");
-            return false; // Prevent further execution
+            return false; 
         }
-        return true; // Proceed with registration
+        return true; 
     };
 
     const handleSave = async (e) => {
@@ -25,7 +25,7 @@ function Register() {
         }
         const user = {
             username: username,
-            passwordHash: password // Remember to hash passwords before storing them
+            passwordHash: password 
         };
         try {
             await addDoc(ref, user);
