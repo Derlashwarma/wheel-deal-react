@@ -9,6 +9,7 @@ html{
   font-size: 50px;
   font-weight: 900;
   font-family: "Poppins", sans-serif;
+  color: #656966c0;
 }
 .web-title {
   font-size: 70px;
@@ -60,7 +61,7 @@ html{
   font-size: 14px;
 }
 .list-item:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 #changing_images{
   width: 100%;
@@ -81,7 +82,7 @@ html{
 }
 
 .shape.circle {
-  border-radius: 50%;
+  border-radius: 40%;
   
   background-color: #2423231c;
 }

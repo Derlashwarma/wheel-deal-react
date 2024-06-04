@@ -48,7 +48,7 @@ function Welcome() {
 
         const shapeInterval = setInterval(() => {
             setShapes((prevShapes) => [
-                ...prevShapes.slice(1),
+                ...prevShapes.slice(3),
                 {
                     id: prevShapes.length,
                     shape: getRandomShape(),
@@ -57,7 +57,7 @@ function Welcome() {
                     direction: getRandomDirection()
                 }
             ]);
-        }, 1000);
+        }, 2000);
 
         return () => {
             clearInterval(imageInterval);
@@ -87,7 +87,7 @@ function Welcome() {
                     <img src={images[currentImageIndex]} id="changing_images" alt="car_images" />
                 </div>
                 <div className="half text-center">
-                    <h2 className="page-title">Welcome To</h2>
+                    <h3 className="page-title">Welcome To</h3>
                     <h1 className="web-title page-title mb-5">Wheel Deal</h1>
                     <p className='text-justify'>
                         Welcome, the ultimate destination for car enthusiasts and buyers alike! Our
