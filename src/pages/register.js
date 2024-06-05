@@ -25,11 +25,13 @@ function Register() {
         }
         const user = {
             username: username,
-            passwordHash: password 
+            passwordHash: password
         };
         try {
             await addDoc(ref, user);
-            console.log("User added successfully");
+            setUsername("")
+            setPassword("");
+            alert("User added successfully");
             return true;
         } catch (error) {
             console.log("Something went wrong: ", error);
