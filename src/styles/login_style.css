@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background:  linear-gradient(to bottom, #fcb3b8, #ffffff);
+    background:  linear-gradient(to bottom, #7997e5, #936dea);
     overflow: hidden;
     border-radius: 2rem 0 0 2rem;
 }
@@ -35,7 +35,10 @@
     font-weight: 800;
     font-size: 3rem;
     font-family: "Poppins",sans-serif;
-    color: rgba(48, 47, 47, 0.884);
+    background: linear-gradient(to bottom, #7c9ff7, #2704ea);;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 1rem;
 }
 .foreground-image{
     width: 150%;
@@ -54,3 +57,19 @@
         transform: translateX(0);
     }
 }
+
+@media (max-width: 1000px){
+    .half{
+      width: 100%;
+    }
+    .left{
+        display: none;
+    }
+    .inputs{
+        padding-right: 0;
+    }
+    .inner-container{
+        width: 100%;
+        padding: 2rem;
+    }
+  }
