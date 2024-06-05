@@ -19,7 +19,7 @@ function Login({ setIsAuthenticated, setUsername }) {
         if (!querySnapshot.empty) {
             const userDoc = querySnapshot.docs[0];
             const userData = userDoc.data();
-            if (userData.passwordHash === loginPassword) {
+            if (userData.password === loginPassword) {
                 return true; 
             }
         }
@@ -28,6 +28,7 @@ function Login({ setIsAuthenticated, setUsername }) {
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        $("#error_message").text("");
         const isAuthenticated = await checkExistingUser();
         if (isAuthenticated) {
             setIsAuthenticated(true);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import firestore from '../firebase';
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+var $ = require("jquery");
 
 function Register() {
     const [username, setUsername] = useState("");
@@ -12,7 +13,6 @@ function Register() {
         const q = query(ref, where("username", "==", username));
         const querySnapshot = await getDocs(q);
         if (!querySnapshot.empty) {
-            alert("An account with this username already exists.");
             return false; 
         }
         return true; 
@@ -20,21 +20,26 @@ function Register() {
 
     const handleSave = async (e) => {
         e.preventDefault();
+        const error_message = $('#error_message');
         if (!(await checkExistingUser())) {
-            return;
+            error_message.text("Username already taken");
+            error_message.css('color','red');
+            return false;
         }
         const user = {
             username: username,
-            passwordHash: password
+            password: password
         };
         try {
             await addDoc(ref, user);
             setUsername("")
             setPassword("");
-            alert("User added successfully");
+            error_message.text("Registration successful");
+            error_message.css('color','green');
             return true;
         } catch (error) {
-            console.log("Something went wrong: ", error);
+            error_message.text("Something went wrong " + error);
+            error_message.css('color','red');
         }
     }
     
@@ -66,6 +71,7 @@ function Register() {
             
             <button type="submit">Register</button>
           </form>
+          <p id="error_message"></p>
         </div>
     );
 }
