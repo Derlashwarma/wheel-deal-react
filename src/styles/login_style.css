@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.login-container{
+    height: 88vh;
+    display: flex;
+}
+.inner-container{
+    display: flex;
+    flex-direction: row;
+}
+.login-btn{
+    width: 100%;
+}
+#loginPassword, #loginUsername {
+    border: 1px solid rgba(84, 80, 80, 0.712);
+}
+#link{
+    text-decoration: none;
+}
+.left, .right{
+    height: 100%;
+}
+.left-container{
+    margin-right: 3rem;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:  linear-gradient(to bottom, #fcb3b8, #ffffff);
+    overflow: hidden;
+    border-radius: 2rem 0 0 2rem;
+}
+.site-name{
+    font-weight: 800;
+    font-size: 3rem;
+    font-family: "Poppins",sans-serif;
+    color: rgba(48, 47, 47, 0.884);
+}
+.foreground-image{
+    width: 150%;
+    animation: rightleft .2s linear;
+}
+.inputs{
+    padding-right: 3rem;
+}
+@keyframes rightleft{
+    0%{
+        transform: scale(200px);
+        transform: translateX(100%);
+    }
+    100%{
+        transform: scale(100%);
+        transform: translateX(0);
+    }
+}
