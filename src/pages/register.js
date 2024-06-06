@@ -10,13 +10,12 @@ function Register() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [email, setEmail] = useState("");
     const colors = ["#E5554E","#CF352E"," #B02B25","#922822","#792723"];
-    const right = $(".right-register-container");
     let index = 0;
     function changeBackground(){
-        right.css('background-color',colors[index]);
+        $(".right-register-container").css('background-color',colors[index]);
         index = (index+1)%colors.length;
     }
-    setInterval(changeBackground,1500);
+    setInterval(changeBackground,2500);
     const ref = collection(firestore, "Users");
     const checkExistingUser = async () => {
         const q = query(ref, where("username", "==", username));
