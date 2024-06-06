@@ -16,6 +16,7 @@ function Login({ setIsAuthenticated, setUsername }) {
     function changeBackgroundColor(){
         $(".left-container").css("background-color",colors[index]);
         index = (index + 1) % colors.length;
+        
     }
 
     const ref = collection(firestore, "Users");

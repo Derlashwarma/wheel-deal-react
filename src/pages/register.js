@@ -14,6 +14,7 @@ function Register() {
     function changeBackground(){
         $(".right-register-container").css('background-color',colors[index]);
         index = (index+1)%colors.length;
+        
     }
     setInterval(changeBackground,2500);
     const ref = collection(firestore, "Users");
