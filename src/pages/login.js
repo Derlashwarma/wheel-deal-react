@@ -11,8 +11,16 @@ function Login({ setIsAuthenticated, setUsername }) {
     const navigate = useNavigate();
     const [loginUsername, setLoginUsername] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
+    const colors = ["#3457D5","#00308F","#7CB9E8","#007FFF","#B2FFFF","#B9D9EB","#00CED1"]
+    let index = 0;
+    function changeBackgroundColor(){
+        $(".left-container").css("background-color",colors[index]);
+        index = (index + 1) % colors.length;
+    }
 
     const ref = collection(firestore, "Users");
+    
+    setInterval(changeBackgroundColor,2000);
     
     const checkExistingUser = async () => {
         const q = query(ref, where("username", "==", loginUsername));
