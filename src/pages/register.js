@@ -64,67 +64,65 @@ function Register() {
     }, [username]);
 
     return (
-        <div className="container">
-          <div className="register-container bg-body rounded-5 shadow-lg">
-            <div className="horizontal-container">
-                <div className="left-registration half">
-                <div className="register-inputs ml-5">
-                        <h2 id="registration">Registration</h2>
-                        <div className="form-floating mb-3">
-                            <input 
-                                className="form-control" 
-                                type="text" 
-                                id="username" 
-                                value={username} 
-                                onChange={(e) => setUsername(e.target.value)} 
-                                placeholder="Username"
-                                />
-                            <label for="loginUsername" class="form-label">Username</label>
-                        </div>
-                        <div className="form-floating mb-3">
-                            <input 
-                                className="form-control" 
-                                type="email" 
-                                id="email" 
-                                value={email} 
-                                onChange={(e) => setEmail(e.target.value)} 
-                                placeholder="Email"
-                                />
-                            <label for="email" class="form-label">Email</label>
-                        </div>
-                        <div className="form-floating mb-3">
-                            <input 
-                                className="form-control"
-                                type="password" 
-                                id="password" 
-                                value={password} 
-                                onChange={(e) => setPassword(e.target.value)} 
-                                placeholder="Password"
-                                />  
-                            <label className="form-label">Password</label>  
-                        </div>    
-                        <div className="form-floating">
-                            <input 
-                                className="form-control"
-                                type="password" 
-                                id="confirmPassword" 
-                                value={confirmPassword} 
-                                onChange={(e) => setConfirmPassword(e.target.value)} 
-                                placeholder="Confirm Password"
-                                />  
-                            <label className="form-label">Confirm Password</label>  
-                        </div> 
-                        <p id="error_message" className="mb-3"></p>
-                        <button className="form-control btn btn-danger btn-lg" onClick={handleSave}>Register</button>
+        <div className="register-container">
+        <div className="horizontal-container">
+            <div className="left-registration half">
+            <div className="register-inputs ml-5">
+                    <h2 id="registration">Registration</h2>
+                    <div className="form-floating mb-3">
+                        <input 
+                            className="form-control" 
+                            type="text" 
+                            id="username" 
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)} 
+                            placeholder="Username"
+                            />
+                        <label for="loginUsername" class="form-label">Username</label>
                     </div>
-                </div>
-                <div className="right-registration half">
-                    <div className="right-register-container">
-
+                    <div className="form-floating mb-3">
+                        <input 
+                            className="form-control" 
+                            type="email" 
+                            id="email" 
+                            value={email} 
+                            onChange={(e) => setEmail(e.target.value)} 
+                            placeholder="Email"
+                            />
+                        <label for="email" class="form-label">Email</label>
                     </div>
+                    <div className="form-floating mb-3">
+                        <input 
+                            className="form-control"
+                            type="password" 
+                            id="password" 
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)} 
+                            placeholder="Password"
+                            />  
+                        <label className="form-label">Password</label>  
+                    </div>    
+                    <div className="form-floating">
+                        <input 
+                            className="form-control"
+                            type="password" 
+                            id="confirmPassword" 
+                            value={confirmPassword} 
+                            onChange={(e) => setConfirmPassword(e.target.value)} 
+                            placeholder="Confirm Password"
+                            />  
+                        <label className="form-label">Confirm Password</label>  
+                    </div> 
+                    <p id="error_message" className="mb-3"></p>
+                    <button className="form-control btn btn-danger btn-lg" onClick={handleSave}>Register</button>
                 </div>
             </div>
-          </div>
+            <div className="right-registration half">
+                <div className="right-register-container">
+
+                </div>
+            </div>
+        </div>
         </div>
     );
 }

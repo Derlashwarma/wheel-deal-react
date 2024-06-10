@@ -1,0 +1,9 @@
+.mainpage-container{
+    height: 95vh;
+}
+#description{
+    width: 100%;
+}
+.form-container{
+    display: none;
+}
