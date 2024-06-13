@@ -30,14 +30,18 @@ function Register() {
     const handleSave = async (e) => {
         e.preventDefault();
         const error_message = $('#error_message');
+        error_message.text("");
+        error_message.css('color','red');
+        if (!username || !password || !confirmPassword || !email) {
+            error_message.text("Please Enter All Fields");
+            return;
+        }
         if(confirmPassword !== password) {
             error_message.text("Password do not match");
-            error_message.css('color','red');
             return;
         }
         if (!(await checkExistingUser())) {
             error_message.text("Username already taken");
-            error_message.css('color','red');
             return false;
         }
         const user = {
@@ -55,7 +59,6 @@ function Register() {
             return true;
         } catch (error) {
             error_message.text("Something went wrong " + error);
-            error_message.css('color','red');
         }
     }
     

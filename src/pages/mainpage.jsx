@@ -132,6 +132,8 @@ const MainPage = ({ username }) => {
                 onClick={makeUploadAppear}
             >Upload a Post</button>
             <div className="news-feed">
+                
+            <h1>{username}</h1>
                 {posts.map(post => (
                     <div key={post.id} className={`post mb-4`}>
                         <div className="top-div mt-4">

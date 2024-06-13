@@ -40,6 +40,7 @@ function Login({ setIsAuthenticated, setUsername }) {
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        $("#error_message").text("");
         if(loginUsername === "" || loginPassword === ""){
             $("#error_message").text("Please enter all fields");
             $("#error_message").css("color","red");
