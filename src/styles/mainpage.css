@@ -58,3 +58,28 @@
 .confirm-button{
     align-self: flex-end;
 }
+#confirm-logut {
+    display: none;
+}
+.like-btn:hover{
+    cursor: pointer;
+    color: blue;
+}
+.logged-username-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 1494px){
+    .logged-username-container{
+        position: relative;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+    }
+    .logged-username-container h5{
+        margin-right: 1rem;
+    }
+}

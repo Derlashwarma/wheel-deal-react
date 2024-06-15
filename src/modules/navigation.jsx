@@ -29,6 +29,7 @@ function Navigation({isAuthenticated, setIsAuthenticated}){
                             ()=>{
                                 setIsAuthenticated(false);
                                 $('.show_confirm').show();
+                                localStorage.setItem('isAuthenticated','false')
                             }
                         } >Confirm</Link></li>
                     <li className="list-item" id="cancel"><Link className="link-underline-light text-dark"

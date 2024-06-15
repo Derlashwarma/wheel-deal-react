@@ -35,7 +35,7 @@ function App() {
     <div className="container">
       <div className="col-md-10 shadow m-auto px-5">
         <Router>
-          <Navigation isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+          <Navigation isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated}  />
           <Routes>
             <Route path='/' element={<Welcome />} />
             <Route path='/about' element={<About />} />
