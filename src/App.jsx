@@ -9,6 +9,7 @@ import Navigation from './modules/navigation';
 import Register from './pages/register';
 import { useState, useEffect } from 'react';
 import MainPage from './pages/mainpage';
+import Auction from './pages/auction';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -37,12 +38,13 @@ function App() {
         <Router>
           <Navigation isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated}  />
           <Routes>
-            <Route path='/' element={<Welcome />} />
+            {!isAuthenticated &&<Route path='/' element={<Welcome />} />}
+            {isAuthenticated && <Route path='/' element={<MainPage username={username} />} />}
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
             {!isAuthenticated && <Route path='/login' element={<Login setUsername={handleLogin} setIsAuthenticated={setIsAuthenticated} />} />}
             <Route path='/register' element={<Register />} />
-            {isAuthenticated && <Route path='/mainpage' element={<MainPage username={username} />} />}
+            {isAuthenticated && <Route path='/auctionpage' element={<Auction />}/>}
           </Routes>
         </Router>
       </div>

@@ -53,7 +53,7 @@ function Login({ setIsAuthenticated, setUsername }) {
             $("#error_message").css("color","green");
             setIsAuthenticated(true);
             setUsername(loginUsername);
-            navigate('/mainpage');
+            navigate('/');
         } else {
             $("#error_message").text("Error, user not found or incorrect password");
             $("#error_message").css("color","red");

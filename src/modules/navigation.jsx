@@ -15,7 +15,7 @@ function Navigation({isAuthenticated, setIsAuthenticated}){
         <div className="navigation-class">
             <div><strong className="name websiteName">WheelDeal</strong></div>
             <ul className="container pt-3 list">
-                {isAuthenticated && <li className="list-item"><Link className="list-item" to="/mainpage">Main Page</Link></li> }
+                {isAuthenticated && <li className="list-item"><Link className="list-item" to="/">Main Page</Link></li> }
                 {isAuthenticated && <li className="list-item"><Link className="list-item" to="/auctionpage">Auction Page</Link></li>}
                 {!isAuthenticated && <li className="list-item"><Link className="list-item" to="/">Home</Link></li>}
                 <li className="list-item"><Link className="list-item" to="/about">About</Link></li>
